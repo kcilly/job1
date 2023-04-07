@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/StandardProxy/MyContract.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.10;\r\ncontract MyContract {\r\n    uint256 internal value;\r\n    bool public initialized;\r\n\r\n\r\n    modifier initializer() {\r\n        require(!initialized, \"Only initialize once\");\r\n        _;\r\n        initialized = true;\r\n    }\r\n\r\n    function initialize(uint256 _initValue) public initializer {\r\n        value = _initValue;\r\n    }\r\n    event ValueChanged(uint256 newValue);\r\n\r\n    function setValue(uint256 _value) public {\r\n        value = _value;\r\n        emit ValueChanged(_value);\r\n    }\r\n\r\n    function getValue() public view returns (uint256) {\r\n        return value;\r\n    }\r\n\r\n    function increment() public {\r\n        value++;\r\n    }\r\n\r\n    function version() public pure returns (uint256) {\r\n        return 2;\r\n    }\r\n}"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

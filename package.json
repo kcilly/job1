@@ -1,0 +1,27 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@agrozyme/scripts-helper": "^1.0.31",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.13.0",
+    "hardhat-deploy": "^0.11.25"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2",
+    "@openzeppelin/contracts-upgradeable": "^4.8.2",
+    "scripts-helper": "^1.0.20"
+  },
+  "description": "This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
